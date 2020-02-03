@@ -10,7 +10,7 @@ import requests, ookami
 # Save a default deserialized json
 form = ookami.load_form()
 
-# We can apply certain attributes in-place
+# We can apply attributes in-place
 ookami.content(form=form, data='Hello!')
 ookami.embeds_color(form=form, data=6921661)
 ookami.embeds_title(form=form, data='Update')
