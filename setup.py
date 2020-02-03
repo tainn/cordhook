@@ -8,5 +8,6 @@ setup(
     license='GNU GPLv3',
     author='tainn',
     author_email='tainn@protonmail.com',
-    description='Explicit discord webhook data manipulation'
+    description='Explicit discord webhook data manipulation',
+    data_files=[('', ['ookami/form.json'])]
 )
