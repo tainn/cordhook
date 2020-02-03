@@ -1,0 +1,32 @@
+{
+  "username": null,
+  "avatar_url": null,
+  "content": null,
+  "tts": null,
+  "embeds": [
+    {
+      "author": {
+        "name": null,
+        "url": null,
+        "icon_url": null
+      },
+      "color": null,
+      "title": null,
+      "url": null,
+      "description": null,
+      "fields": [
+      ],
+      "thumbnail": {
+        "url": null
+      },
+      "image": {
+        "url": null
+      },
+      "footer": {
+        "text": null,
+        "icon_url": null
+      },
+      "timestamp": null
+    }
+  ]
+}
