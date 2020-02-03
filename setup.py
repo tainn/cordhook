@@ -9,5 +9,6 @@ setup(
     author='tainn',
     author_email='tainn@protonmail.com',
     description='Explicit discord webhook data manipulation',
+    include_package_data=True,
     data_files=[('', ['ookami/form.json'])]
 )
