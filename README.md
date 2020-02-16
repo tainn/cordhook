@@ -5,7 +5,7 @@ A package written in Python that allows explicit manipulation of discord webhook
 `pip3 install --user git+git://github.com/tainn1/ookami.git`
 
 ## Usage
-Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys are, `Ookami` allows for explicit declaration of the webhook data by calling of functions that populate their respective fields.
+Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys are, `Ookami` allows for explicit declaration of the webhook data by calling of methods that populate their respective fields.
 
 ```py
 from ookami import ookami
