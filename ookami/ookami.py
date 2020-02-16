@@ -2,103 +2,88 @@
 
 import os
 import json
+import requests
 
 
-def load_form() -> dict:
-    """Loads the json form and retuns a deserialized object"""
-    ookami_dir = os.path.dirname(__file__)
-    form_file = os.path.join(ookami_dir, 'form.json')
+class Ookami:
 
-    with open(form_file, 'r') as jf:
-        form = json.load(jf)
+    def __init__(self):
+        """Loads the json form and retuns a deserialized object"""
+        ookami_dir = os.path.dirname(__file__)
+        form_file = os.path.join(ookami_dir, 'form.json')
 
-    return form
+        with open(form_file, 'r') as jf:
+            self.form = json.load(jf)
 
+    def post(self, url: str = None):
+        """Creates a post request on a provided webhook url"""
+        requests.post(url, json=self.form)
 
-def dumps_form(form: dict) -> str:
-    """Dumps the json form and retuns a serialized object"""
-    return json.dumps(form)
+    def username(self, data: str = None):
+        """Overrides the current username of the webhook"""
+        self.form['username'] = data
 
+    def avatar_url(self, data: str = None):
+        """Overrides the default avatar of the webhook"""
+        self.form['avatar_url'] = data
 
-def username(form: dict, data: str = None):
-    """Overrides the current username of the webhook"""
-    form['username'] = data
+    def content(self, data: str = None):
+        """A simple message, contains up to 2000 characters"""
+        self.form['content'] = data
 
+    def tts(self, data: bool = None):
+        """If True, the message will be pronounced in the chat like a tts message"""
+        self.form['tts'] = data
 
-def avatar_url(form: dict, data: str = None):
-    """Overrides the default avatar of the webhook"""
-    form['avatar_url'] = data
+    def embeds_author(self, name: str = None, url: str = None, icon_url: str = None):
+        """Embed author object, includes:
+        Name of the author,
+        Url of the author; if name was used it becomes a hyperlink,
+        Url of the author icon"""
+        self.form['embeds'][0]['author'] = {'name': name,
+                                            'url': url,
+                                            'icon_url': icon_url}
 
+    def embeds_color(self, data: int = None):
+        """Color code of the embed; decimal numeral system is used, not hexadecimal"""
+        self.form['embeds'][0]['color'] = data
 
-def content(form: dict, data: str = None):
-    """A simple message, contains up to 2000 characters"""
-    form['content'] = data
+    def embeds_title(self, data: str = None):
+        """Title of the embed"""
+        self.form['embeds'][0]['title'] = data
 
+    def embeds_url(self, data: str = None):
+        """Url of the embed; if title was used, it becomes a hyperlink"""
+        self.form['embeds'][0]['url'] = data
 
-def tts(form: dict, data: bool = None):
-    """If True, the message will be pronounced in the chat like a tts message"""
-    form['tts'] = data
+    def embeds_description(self, data: str = None):
+        """Description text"""
+        self.form['embeds'][0]['description'] = data
 
+    def embeds_fields(self, name: str = None, value: str = None, inline: bool = None):
+        """Array of embed field objects, each element includes:
+        Name of the field,
+        Value of the field,
+        Inline option; if True, fields will be displayed in the same line"""
+        self.form['embeds'][0]['fields'].append({'name': name,
+                                                 'value': value,
+                                                 'inline': inline})
 
-def embeds_author(form: dict, data_name: str = None, data_url: str = None, data_icon_url: str = None):
-    """Embed author object, includes:
-    Name of the author,
-    Url of the author. If name was used, it becomes a hyperlink,
-    Url of the author icon"""
-    form['embeds'][0]['author'] = {'name': data_name,
-                                   'url': data_url,
-                                   'icon_url': data_icon_url}
+    def embeds_thumbnail(self, url: str = None):
+        """Embed thumbnail object"""
+        self.form['embeds'][0]['thumbnail'] = {'url': url}
 
+    def embeds_image(self, url: str = None):
+        """Embed image object, includes an image url"""
+        self.form['embeds'][0]['image'] = {'url': url}
 
-def embeds_color(form: dict, data: int = None):
-    """Color code of the embed. Decimal numeral system is used, not hexadecimal"""
-    form['embeds'][0]['color'] = data
+    def embeds_footer(self, text: str = None, icon_url: str = None):
+        """Embed footer object, includes:
+        Footer text; does not support Markdown,
+        Url of the footer icon"""
+        self.form['embeds'][0]['footer'] = {'text': text,
+                                            'icon_url': icon_url}
 
-
-def embeds_title(form: dict, data: str = None):
-    """Title of the embed"""
-    form['embeds'][0]['title'] = data
-
-
-def embeds_url(form: dict, data: str = None):
-    """Url of the embed. If title was used, it becomes a hyperlink"""
-    form['embeds'][0]['url'] = data
-
-
-def embeds_description(form: dict, data: str = None):
-    """Description text"""
-    form['embeds'][0]['description'] = data
-
-
-def embeds_fields(form: dict, data_name: str = None, data_value: str = None, data_inline: bool = None):
-    """Array of embed field objects, each element includes:
-    Name of the field,
-    Value of the field,
-    Inline option. If True, fields will be displayed in the same line"""
-    form['embeds'][0]['fields'].append({'name': data_name,
-                                        'value': data_value,
-                                        'inline': data_inline})
-
-
-def embeds_thumbnail(form: dict, data_url: str = None):
-    """Embed thumbnail object"""
-    form['embeds'][0]['thumbnail'] = {'url': data_url}
-
-
-def embeds_image(form: dict, data_url: str = None):
-    """Embed image object, includes:
-    Image url"""
-    form['embeds'][0]['image'] = {'url': data_url}
-
-
-def embeds_footer(form: dict, data_text: str = None, data_icon_url: str = None):
-    """Embed footer object, includes:
-    Footer text. Does not support Markdown,
-    Url of the footer icon"""
-    form['embeds'][0]['footer'] = {'text': data_text,
-                                   'icon_url': data_icon_url}
-
-
-def embeds_timestamp(form: dict, data: str = None):
-    """ISO8601 timestamp (yyyy-mm-ddThh:mm:ss.msZ)"""
-    form['embeds'][0]['timestamp'] = data
+    def embeds_timestamp(self, data: str = None):
+        """ISO8601 timestamp (yyyy-mm-ddThh:mm:ss.msZ)"""
+        self.form['embeds'][0]['timestamp'] = data
