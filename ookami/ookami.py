@@ -6,6 +6,7 @@ import requests
 
 
 class Ookami:
+    """Allows for explicit creation, population and posting of a discord webhook"""
 
     def __init__(self):
         """Loads the json form and retuns a deserialized object"""
