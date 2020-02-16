@@ -9,7 +9,7 @@ class Ookami:
     """Allows for explicit creation, population and posting of a discord webhook"""
 
     def __init__(self):
-        """Loads the json form and retuns a deserialized object"""
+        """Loads the json form and creates a deserialized object"""
         ookami_dir = os.path.dirname(__file__)
         form_file = os.path.join(ookami_dir, 'form.json')
 
