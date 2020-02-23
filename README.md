@@ -1,4 +1,7 @@
 # Ookami
+![Version](https://img.shields.io/badge/version-v1.1-blue)
+![License](https://img.shields.io/badge/license-GPLv3-orange)
+
 A package written in Python that allows explicit manipulation of discord webhook data.
 
 ## Install
