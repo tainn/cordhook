@@ -82,6 +82,11 @@ class Ookami:
                                                  'value': value,
                                                  'inline': inline})
 
+    def embeds_fields_count(self):
+        """Returns the amount of elements in the embed fields list"""
+
+        return len(self.form['embeds'][0]['fields'])
+
     def embeds_thumbnail(self, url: str = None):
         """Embed thumbnail object"""
 
