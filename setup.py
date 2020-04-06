@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ookami',
-    version='1.1',
+    version='1.2',
     packages=['ookami'],
     url='https://github.com/tainn/ookami',
     license='GNU GPLv3',
