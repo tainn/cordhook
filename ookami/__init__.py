@@ -1,0 +1,1 @@
+from .ookami import Ookami
