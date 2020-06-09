@@ -15,7 +15,7 @@ class Ookami:
         form_file: str = os.path.join(ookami_dir, 'form.json')
 
         with open(form_file, 'r') as jf:
-            self.form = json.load(jf)
+            self.form: dict = json.load(jf)
 
     def post(self, url: str = None) -> None:
         """Creates a post request on a provided webhook url"""
@@ -48,9 +48,11 @@ class Ookami:
         Url of the author; if name was used it becomes a hyperlink,
         Url of the author icon"""
 
-        self.form['embeds'][0]['author'] = {'name': name,
-                                            'url': url,
-                                            'icon_url': icon_url}
+        self.form['embeds'][0]['author'] = {
+            'name': name,
+            'url': url,
+            'icon_url': icon_url
+        }
 
     def embeds_color(self, data: int = None) -> None:
         """Color code of the embed; decimal numeral system is used, not hexadecimal"""
@@ -78,9 +80,11 @@ class Ookami:
         Value of the field,
         Inline option; if True, fields will be displayed in the same line"""
 
-        self.form['embeds'][0]['fields'].append({'name': name,
-                                                 'value': value,
-                                                 'inline': inline})
+        self.form['embeds'][0]['fields'].append(
+            {'name': name,
+             'value': value,
+             'inline': inline}
+        )
 
     def embeds_fields_count(self) -> int:
         """Returns the amount of elements in the embed fields list"""
@@ -102,8 +106,10 @@ class Ookami:
         Footer text; does not support Markdown,
         Url of the footer icon"""
 
-        self.form['embeds'][0]['footer'] = {'text': text,
-                                            'icon_url': icon_url}
+        self.form['embeds'][0]['footer'] = {
+            'text': text,
+            'icon_url': icon_url
+        }
 
     def embeds_timestamp(self, data: str = None) -> None:
         """ISO8601 timestamp (yyyy-mm-ddThh:mm:ss.msZ)"""
