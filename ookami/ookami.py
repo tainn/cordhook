@@ -11,8 +11,8 @@ class Ookami:
     def __init__(self) -> None:
         """Loads the json form and creates a deserialized object"""
 
-        ookami_dir = os.path.dirname(__file__)
-        form_file = os.path.join(ookami_dir, 'form.json')
+        ookami_dir: str = os.path.dirname(__file__)
+        form_file: str = os.path.join(ookami_dir, 'form.json')
 
         with open(form_file, 'r') as jf:
             self.form = json.load(jf)
