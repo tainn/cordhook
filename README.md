@@ -9,7 +9,7 @@ Instead of having to manually build a deserialized `json` object and at that be 
 ## Install
 Fetch the latest version of the package:
 
-`pip3 install --user git+git://github.com/tainn/ookami.git --upgrade`
+`pip3 install --user --upgrade git+git://github.com/tainn/ookami.git`
 
 ## Usage
 ```py
