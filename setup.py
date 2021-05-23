@@ -1,14 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='ookami',
+    name='ookami-webhook',
     version='1.3',
     packages=['ookami'],
-    url='https://github.com/tainn/ookami',
+    url='https://github.com/tainn/ookami-webhook',
     license='GNU GPLv3',
     author='tainn',
-    author_email='tainn@protonmail.com',
-    description='Explicit discord webhook data manipulation',
+    description='Explicit Discord webhook data manipulation',
     include_package_data=True,
     data_files=[('', ['ookami/form.json'])],
     install_requires=['requests']
