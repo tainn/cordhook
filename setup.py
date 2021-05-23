@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ookami-webhook',
-    version='1.3',
+    version='1.4',
     packages=['ookami'],
     url='https://github.com/tainn/ookami-webhook',
     license='GNU GPLv3',
