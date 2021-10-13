@@ -1,7 +1,5 @@
 import requests
 
-from raw import raw_form
-
 
 class Form:
     """
@@ -14,7 +12,37 @@ class Form:
         """
         Loads the hard-coded raw form dict from the included raw module
         """
-        self.form: dict = raw_form()
+        self.form: dict = {
+            'username': None,
+            'avatar_url': None,
+            'content': None,
+            'tts': None,
+            'embeds': [
+                {
+                    'author': {
+                        'name': None,
+                        'url': None,
+                        'icon_url': None
+                    },
+                    'color': None,
+                    'title': None,
+                    'url': None,
+                    'description': None,
+                    'fields': [],
+                    'thumbnail': {
+                        'url': None
+                    },
+                    'image': {
+                        'url': None
+                    },
+                    'footer': {
+                        'text': None,
+                        'icon_url': None
+                    },
+                    'timestamp': None
+                }
+            ]
+        }
 
     # Segment 1
 

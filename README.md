@@ -16,7 +16,7 @@ pip3 install --user --upgrade git+git://github.com/tainn/ookami-webhook.git
 
 ## Usage
 
-A collection of all keys is available in the provided `ookami/raw` module, from where the inital form is also loaded.
+A collection of all keys is available in the constructor.
 
 ```py
 import ookami
