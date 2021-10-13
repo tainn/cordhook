@@ -1,9 +1,13 @@
 # ookami-webhook
+
 A package written in Python that allows for explicit manipulation of Discord webhook data.
 
-Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys are, `ookami` allows for explicit declaration of the webhook data by calling of methods that populate their respective fields.
+Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys
+are, `ookami` allows for explicit and flat declaration of the webhook data by calling of methods that populate their
+respective fields.
 
 ## Install
+
 Fetch the latest version of the package
 
 ```sh
@@ -11,13 +15,14 @@ pip3 install --user --upgrade git+git://github.com/tainn/ookami-webhook.git
 ```
 
 ## Usage
-The form with all eligible fields is located in [`ookami/form.json`](https://github.com/tainn/ookami-webhook/blob/master/ookami/form.json)
+
+A collection of all keys is available in the provided `ookami/raw` module, from where the inital form is also loaded.
 
 ```py
 import ookami
 
-# Save a default deserialized json object
-form = ookami.Ookami()
+# Load a raw form
+form = ookami.Form()
 
 # We can apply attributes in-place
 form.content('Hello!')

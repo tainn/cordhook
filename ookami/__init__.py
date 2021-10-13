@@ -1,1 +1,1 @@
-from .ookami import Ookami
+from .ookami import Form

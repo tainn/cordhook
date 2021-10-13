@@ -1,23 +1,20 @@
-import os
-import json
 import requests
 
+from raw import raw_form
 
-class Ookami:
+
+class Form:
     """
-    Allows for explicit creation, population and posting of a discord webhook
-    Segment 1 features form population methods, segment 2 features utility methods
+    Allows for explicit and flat creation, population and posting of a discord webhook
+    - Segment 1 features: form population methods
+    - Segment 2 features: utility methods
     """
 
     def __init__(self) -> None:
         """
-        Loads the json form and creates a deserialized object
+        Loads the hard-coded raw form dict from the included raw module
         """
-        ookami_dir: str = os.path.dirname(__file__)
-        form_file: str = os.path.join(ookami_dir, 'form.json')
-
-        with open(form_file, 'r') as jf:
-            self.form: dict = json.load(jf)
+        self.form: dict = raw_form()
 
     # Segment 1
 

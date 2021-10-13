@@ -8,7 +8,5 @@ setup(
     license='GNU GPLv3',
     author='tainn',
     description='Explicit Discord webhook data manipulation',
-    include_package_data=True,
-    data_files=[('', ['ookami/form.json'])],
     install_requires=['requests']
 )
