@@ -1,6 +1,9 @@
 # ookami-webhook
 
-A package written in Python that allows for explicit manipulation of Discord webhook data.
+![Version](https://img.shields.io/badge/version-1.6-red)
+![Dependencies](https://img.shields.io/badge/dependencies-requests-lightgrey)
+
+Package written in Python that allows for explicit manipulation of Discord webhook data.
 
 Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys
 are, `ookami` allows for explicit and flat declaration of the webhook data by calling of methods that populate their
@@ -32,6 +35,7 @@ form.username(username='foo')
 form.avatar_url(avatar_url='link-to-image')
 form.content(content='bar')
 form.tts(tts=False)
+
 form.embeds_author(name='baz', url='link-to-page', icon_url='link-to-image')
 form.embeds_color(color=6921661)  # Decimal, not hex
 form.embeds_title(title='qux')
