@@ -1,7 +1,7 @@
 # ookami-webhook
 
-![Version](https://img.shields.io/badge/version-1.6-red)
-![Dependencies](https://img.shields.io/badge/dependencies-requests-lightgrey)
+[![Version](https://img.shields.io/badge/version-1.6-red)](https://github.com/tainn/ookami-webhook/blob/master/setup.py#L5)
+[![Dependencies](https://img.shields.io/badge/dependencies-requests-lightgrey)](https://github.com/tainn/ookami-webhook/blob/master/ookami/ookami.py#L1)
 
 Package written in Python that allows for explicit manipulation of Discord webhook data.
 
