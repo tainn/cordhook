@@ -2,14 +2,11 @@ import requests
 
 
 class Form:
-    """
-    Allows for explicit and flat creation, population and posting of a discord webhook
-    - Segment 1 features: form population methods
-    - Segment 2 features: utility methods
-    """
+    """Allows for explicit and flat creation, population and posting of a discord webhook."""
 
     def __init__(self) -> None:
-        """Loads the hard-coded raw form dict from the included raw module"""
+        """Loads the hard-coded raw form dict from the included raw module."""
+
         self.form: dict = {
             'username': None,
             'avatar_url': None,
@@ -42,39 +39,39 @@ class Form:
             ]
         }
 
-    # Segment 1
+    # Form population methods
 
     def username(self, username: str = None) -> None:
-        """
-        Overrides the current username of the webhook
+        """Overrides the current username of the webhook.
+
         :param username: specified username
         """
         self.form['username'] = username
 
     def avatar_url(self, avatar_url: str = None) -> None:
-        """
-        Overrides the default avatar of the webhook
+        """Overrides the default avatar of the webhook.
+
         :param avatar_url: url to the avatar
         """
         self.form['avatar_url'] = avatar_url
 
     def content(self, content: str = None) -> None:
-        """
-        Sets a simple message that contains up to 2000 characters
+        """Sets a simple message that contains up to 2000 characters.
+
         :param content: content of the message
         """
         self.form['content'] = content
 
     def tts(self, tts: bool = None) -> None:
-        """
-        If True, the message will be pronounced in the chat like a tts message
+        """If True, the message will be pronounced in the chat like a tts message.
+
         :param tts: bool switch for pronounciation
         """
         self.form['tts'] = tts
 
     def embeds_author(self, name: str = None, url: str = None, icon_url: str = None) -> None:
-        """
-        Sets the embed author object
+        """Sets the embed author object.
+
         :param name: name of the author
         :param url: url of the author: if name was used it becomes a hyperlink
         :param icon_url: url of the author icon
@@ -86,36 +83,36 @@ class Form:
         }
 
     def embeds_color(self, color: int = None) -> None:
-        """
-        Sets the color of the embed via a color code (decimal numeral system is used, not hexa)
+        """Sets the color of the embed via a color code (decimal numeral system is used, not hexa).
+
         :param color: the color code
         """
         self.form['embeds'][0]['color'] = color
 
     def embeds_title(self, title: str = None) -> None:
-        """
-        Sets a title of the embed
+        """Sets a title of the embed.
+
         :param title: title of the embed
         """
         self.form['embeds'][0]['title'] = title
 
     def embeds_url(self, url: str = None) -> None:
-        """
-        Sets an url of the embed: if title was used it becomes a hyperlink
+        """Sets an url of the embed: if title was used it becomes a hyperlink.
+
         :param url: url of the embed
         """
         self.form['embeds'][0]['url'] = url
 
     def embeds_description(self, description: str = None) -> None:
-        """
-        Sets a description
+        """Sets a description.
+
         :param description: description text
         """
         self.form['embeds'][0]['description'] = description
 
     def embeds_fields(self, name: str = None, value: str = None, inline: bool = None) -> None:
-        """
-        Sets an array of embed field objects
+        """Sets an array of embed field objects.
+
         :param name: name of the field
         :param value: value of the field
         :param inline: inline option: if True, fields will be displayed in the same line
@@ -129,22 +126,22 @@ class Form:
         )
 
     def embeds_thumbnail(self, url: str = None) -> None:
-        """
-        Sets an embed thumbnail
+        """Sets an embed thumbnail.
+
         :param url: embed thumbnail object
         """
         self.form['embeds'][0]['thumbnail'] = {'url': url}
 
     def embeds_image(self, url: str = None) -> None:
-        """
-        Sets an embed image
+        """Sets an embed image.
+
         :param url: embed image object, includes an image url
         """
         self.form['embeds'][0]['image'] = {'url': url}
 
     def embeds_footer(self, text: str = None, icon_url: str = None) -> None:
-        """
-        Sets an embed footer
+        """Sets an embed footer.
+
         :param text: footer text: does not support Markdown
         :param icon_url: url of the footer icon
         """
@@ -154,24 +151,24 @@ class Form:
         }
 
     def embeds_timestamp(self, timestamp: str = None) -> None:
-        """
-        Sets a timestamp
+        """Sets a timestamp.
+
         :param timestamp: ISO8601 timestamp (yyyy-mm-ddThh:mm:ss.msZ)
         """
         self.form['embeds'][0]['timestamp'] = timestamp
 
-    # Segment 2
+    # Utility methods
 
     def post(self, url: str = None) -> None:
-        """
-        Creates a post request on a provided webhook url
+        """Creates a post request on a provided webhook url.
+
         :param url: webhook url
         """
         requests.post(url, json=self.form)
 
     def embeds_fields_count(self) -> int:
-        """
-        Counts the amount of elements in the embed fields list
+        """Counts the amount of elements in the embed fields list.
+
         :return: the count
         """
         return len(self.form['embeds'][0]['fields'])
