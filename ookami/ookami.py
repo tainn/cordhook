@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import requests
 
 
@@ -41,35 +43,39 @@ class Form:
 
     # Form population methods
 
-    def username(self, username: str = None) -> None:
+    def username(self, username: str = None) -> Form:
         """Overrides the current username of the webhook.
 
         :param username: specified username
         """
         self.form['username'] = username
+        return self
 
-    def avatar_url(self, avatar_url: str = None) -> None:
+    def avatar_url(self, avatar_url: str = None) -> Form:
         """Overrides the default avatar of the webhook.
 
         :param avatar_url: url to the avatar
         """
         self.form['avatar_url'] = avatar_url
+        return self
 
-    def content(self, content: str = None) -> None:
+    def content(self, content: str = None) -> Form:
         """Sets a simple message that contains up to 2000 characters.
 
         :param content: content of the message
         """
         self.form['content'] = content
+        return self
 
-    def tts(self, tts: bool = None) -> None:
+    def tts(self, tts: bool = None) -> Form:
         """If True, the message will be pronounced in the chat like a tts message.
 
         :param tts: bool switch for pronounciation
         """
         self.form['tts'] = tts
+        return self
 
-    def embeds_author(self, name: str = None, url: str = None, icon_url: str = None) -> None:
+    def embeds_author(self, name: str = None, url: str = None, icon_url: str = None) -> Form:
         """Sets the embed author object.
 
         :param name: name of the author
@@ -81,36 +87,41 @@ class Form:
             'url': url,
             'icon_url': icon_url
         }
+        return self
 
-    def embeds_color(self, color: int = None) -> None:
+    def embeds_color(self, color: int = None) -> Form:
         """Sets the color of the embed via a color code (decimal numeral system is used, not hexa).
 
         :param color: the color code
         """
         self.form['embeds'][0]['color'] = color
+        return self
 
-    def embeds_title(self, title: str = None) -> None:
+    def embeds_title(self, title: str = None) -> Form:
         """Sets a title of the embed.
 
         :param title: title of the embed
         """
         self.form['embeds'][0]['title'] = title
+        return self
 
-    def embeds_url(self, url: str = None) -> None:
+    def embeds_url(self, url: str = None) -> Form:
         """Sets an url of the embed: if title was used it becomes a hyperlink.
 
         :param url: url of the embed
         """
         self.form['embeds'][0]['url'] = url
+        return self
 
-    def embeds_description(self, description: str = None) -> None:
+    def embeds_description(self, description: str = None) -> Form:
         """Sets a description.
 
         :param description: description text
         """
         self.form['embeds'][0]['description'] = description
+        return self
 
-    def embeds_fields(self, name: str = None, value: str = None, inline: bool = None) -> None:
+    def embeds_fields(self, name: str = None, value: str = None, inline: bool = None) -> Form:
         """Sets an array of embed field objects.
 
         :param name: name of the field
@@ -124,22 +135,25 @@ class Form:
                 'inline': inline
             }
         )
+        return self
 
-    def embeds_thumbnail(self, url: str = None) -> None:
+    def embeds_thumbnail(self, url: str = None) -> Form:
         """Sets an embed thumbnail.
 
         :param url: embed thumbnail object
         """
         self.form['embeds'][0]['thumbnail'] = {'url': url}
+        return self
 
-    def embeds_image(self, url: str = None) -> None:
+    def embeds_image(self, url: str = None) -> Form:
         """Sets an embed image.
 
         :param url: embed image object, includes an image url
         """
         self.form['embeds'][0]['image'] = {'url': url}
+        return self
 
-    def embeds_footer(self, text: str = None, icon_url: str = None) -> None:
+    def embeds_footer(self, text: str = None, icon_url: str = None) -> Form:
         """Sets an embed footer.
 
         :param text: footer text: does not support Markdown
@@ -149,13 +163,15 @@ class Form:
             'text': text,
             'icon_url': icon_url
         }
+        return self
 
-    def embeds_timestamp(self, timestamp: str = None) -> None:
+    def embeds_timestamp(self, timestamp: str = None) -> Form:
         """Sets a timestamp.
 
         :param timestamp: ISO8601 timestamp (yyyy-mm-ddThh:mm:ss.msZ)
         """
         self.form['embeds'][0]['timestamp'] = timestamp
+        return self
 
     # Utility methods
 

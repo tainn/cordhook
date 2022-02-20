@@ -1,7 +1,8 @@
 # ookami-webhook
 
-![Version](https://img.shields.io/badge/version-1.7-red)
-![Dependencies](https://img.shields.io/badge/dependencies-requests-lightgrey)
+![Package_Version](https://img.shields.io/badge/package-1.7-b0c9ff)
+![Python_Version](https://img.shields.io/badge/python-3.7%2B-b0c9ff)
+![Dependencies](https://img.shields.io/badge/dependencies-requests-e0b0ff)
 
 A package written in Python that allows for explicit manipulation of Discord webhook data.
 
@@ -23,6 +24,8 @@ Metasyntactic variable names can be replaced with artibrary text, while explanat
 specific values, such as links or timestamps.
 
 All attributes are optional.
+
+Each method returns a class instance, allowing for easy method chaining.
 
 ```py
 import ookami
