@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ookami-webhook',
-    version='1.8',
+    version='1.9',
     packages=['ookami'],
     url='https://github.com/tainn/ookami-webhook',
     license='MIT',
