@@ -5,7 +5,7 @@ setup(
     version='1.8',
     packages=['ookami'],
     url='https://github.com/tainn/ookami-webhook',
-    license='GNU GPLv3',
+    license='MIT',
     author='tainn',
     description='Explicit Discord webhook data manipulation',
     install_requires=['requests']
