@@ -7,7 +7,7 @@ class Form:
     """Allows for explicit and flat creation, population and posting of a discord webhook."""
 
     def __init__(self) -> None:
-        """Loads the hard-coded raw form dict from the included raw module."""
+        """Sets the hard-coded form dict."""
 
         self.form: dict = {
             'username': None,
