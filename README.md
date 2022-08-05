@@ -1,7 +1,6 @@
 # ookami-webhook
 
-![package_version](https://img.shields.io/badge/package-1.9-b0c9ff)
-![python_version](https://img.shields.io/badge/python-3.7-b0c9ff)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A package written in Python that allows for explicit manipulation of Discord webhook data.
 
