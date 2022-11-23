@@ -18,10 +18,18 @@ pip3 install --upgrade git+git://github.com/tainn/ookami-webhook.git
 
 ## Usage
 
-`...` values in the following code block can be replaced with artibrary text, `image` with a link to an image,
-and `page` with a link to a page. All attributes are optional. Only a single element of an embed is currently supported.
+The following values can be replaced with:
 
-Each method returns a class instance, allowing for easy method chaining.
+- `...`: artibrary text
+- `image`: link to an image
+- `page`: link to a page
+- `0000000`: decimal color value, not hex
+- `bool`: opposite bool
+- `timestamp`: ISO8601 timestamp
+- `webhook`: webhook url
+
+All attributes are optional. Only a single element of an embed is currently supported. Each method returns a class
+instance, allowing for easy method chaining.
 
 ```py
 import ookami
@@ -36,7 +44,7 @@ form.content(content="...")
 form.tts(tts=False)
 
 form.embeds_author(name="...", url="page", icon_url="image")
-form.embeds_color(color=6921661)  # decimal, not hex
+form.embeds_color(color=0000000)
 form.embeds_title(title="...")
 form.embeds_url(url="page")
 form.embeds_description(description="...")
@@ -44,10 +52,10 @@ form.embeds_fields(name="...", value="...", inline=True)
 form.embeds_thumbnail(url="image")
 form.embeds_image(url="image")
 form.embeds_footer(text="...", icon_url="image")
-form.embeds_timestamp(timestamp="yyyy-mm-ddThh:mm:ss.msZ")  # ISO8601 timestamp
+form.embeds_timestamp(timestamp="timestamp")
 
 # Ready to post
-form.post("webhook-url")
+form.post("webhook")
 ```
 
 ## Form
