@@ -4,11 +4,7 @@ import requests
 
 
 class Form:
-    """Allows for explicit and flat creation, population and posting of a discord webhook."""
-
     def __init__(self) -> None:
-        """Sets the hard-coded form dict."""
-
         self.form: dict = {
             "username": None,
             "avatar_url": None,
