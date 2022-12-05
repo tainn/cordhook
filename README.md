@@ -1,11 +1,11 @@
-# ookami-webhook
+# discord-webhook
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A package that allows for explicit manipulation of Discord webhook data.
 
 Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys
-are, `ookami` allows for explicit and flat declaration of the webhook data by calling of methods that populate their
+are, `cordhook` allows for explicit and flat declaration of the payload data by calling of methods that populate their
 respective fields.
 
 ## Install
@@ -13,7 +13,7 @@ respective fields.
 Fetch the latest version of the package:
 
 ```sh
-pip3 install --upgrade git+git://github.com/tainn/ookami-webhook.git
+pip3 install --upgrade git+git://github.com/tainn/discord-webhook.git
 ```
 
 ## Usage
@@ -32,10 +32,10 @@ All attributes are optional. Only a single element of an embed is currently supp
 instance, allowing for easy method chaining.
 
 ```py
-import ookami
+import cordhook
 
 # Load a raw form
-form = ookami.Form()
+form = cordhook.Form()
 
 # We can apply attributes in-place
 form.username(username="...")

@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="ookami-webhook",
-    version="1.10",
-    packages=["ookami"],
-    url="https://github.com/tainn/ookami-webhook",
+    name="discord-webhook",
+    version="2.0",
+    packages=["cordhook"],
+    url="https://github.com/tainn/discord-webhook",
     license="MIT",
     author="tainn",
     description="Explicit Discord webhook data manipulation",
