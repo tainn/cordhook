@@ -21,6 +21,7 @@ pip3 install --upgrade git+https://github.com/tainn/discord-webhook.git
 The following values can be replaced with:
 
 - `...`: artibrary text
+- `1`: arbitrary integer
 - `image`: link to an image
 - `page`: link to a page
 - `0000000`: decimal color value, not hex
@@ -28,8 +29,8 @@ The following values can be replaced with:
 - `timestamp`: ISO8601 timestamp
 - `webhook`: webhook url
 
-All attributes are optional. Only a single element of an embed is currently supported. Each method returns a class
-instance, allowing for easy method chaining.
+All attributes are optional. Multiple embeds can be populated in a single payload. Each method returns a class instance,
+allowing for easy method chaining.
 
 ```py
 import cordhook
@@ -43,16 +44,22 @@ form.avatar_url(avatar_url="image")
 form.content(content="...")
 form.tts(tts=False)
 
-form.embeds_author(name="...", url="page", icon_url="image")
-form.embeds_color(color=0000000)
-form.embeds_title(title="...")
-form.embeds_url(url="page")
-form.embeds_description(description="...")
-form.embeds_fields(name="...", value="...", inline=True)
-form.embeds_thumbnail(url="image")
-form.embeds_image(url="image")
-form.embeds_footer(text="...", icon_url="image")
-form.embeds_timestamp(timestamp="timestamp")
+form.embed_author(name="...", url="page", icon_url="image")
+form.embed_color(color=0000000)
+form.embed_title(title="...")
+form.embed_url(url="page")
+form.embed_description(description="...")
+form.embed_fields(name="...", value="...", inline=True)
+form.embed_thumbnail(url="image")
+form.embed_image(url="image")
+form.embed_footer(text="...", icon_url="image")
+form.embed_timestamp(timestamp="timestamp")
+
+# Utility methods
+form.embed_fields_count()
+form.embeds_count()
+form.next_active_embed()
+form.change_active_embed(embed=1)
 
 # Ready to post
 form.post("webhook")
