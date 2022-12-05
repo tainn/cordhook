@@ -13,7 +13,7 @@ respective fields.
 Fetch the latest version of the package:
 
 ```sh
-pip3 install --upgrade git+git://github.com/tainn/discord-webhook.git
+pip3 install --upgrade git+https://github.com/tainn/discord-webhook.git
 ```
 
 ## Usage
