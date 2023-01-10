@@ -18,19 +18,12 @@ pip3 install --upgrade git+https://github.com/tainn/discord-webhook.git
 
 ## Usage
 
-The following values can be replaced with:
-
-- `...`: artibrary text
-- `1`: arbitrary integer
-- `image`: link to an image
-- `page`: link to a page
-- `0000000`: decimal color value, not hex
-- `bool`: opposite bool
-- `timestamp`: ISO8601 timestamp
-- `webhook`: webhook url
-
 All attributes are optional. Multiple embeds can be populated in a single payload. Each method returns a class instance,
 allowing for easy method chaining.
+
+### Example
+
+A minimal example setting the `username` and `embed_color` values and posting the webhook.
 
 ```py
 import cordhook
@@ -38,36 +31,42 @@ import cordhook
 # Load a raw form
 form = cordhook.Form()
 
-# We can apply attributes in-place
-form.username(username="...")
-form.avatar_url(avatar_url="image")
-form.content(content="...")
-form.tts(tts=False)
-
-form.embed_author(name="...", url="page", icon_url="image")
-form.embed_color(color=0000000)
-form.embed_title(title="...")
-form.embed_url(url="page")
-form.embed_description(description="...")
-form.embed_fields(name="...", value="...", inline=True)
-form.embed_thumbnail(url="image")
-form.embed_image(url="image")
-form.embed_footer(text="...", icon_url="image")
-form.embed_timestamp(timestamp="timestamp")
-
-# Utility methods
-form.embed_fields_count()
-form.embeds_count()
-form.next_active_embed()
-form.change_active_embed(embed=1)
+# Apply changes in-place
+form.username("Kaonashi").embed_color(0000000)
 
 # Ready to post
-form.post("webhook")
+form.post("webhook-url")
 ```
 
-## Form
+### Methods
 
-For perspective, this is the raw form that is being populated through method calls:
+A table featuring all available methods, their types, parameters and further info.
+
+| method   | type    | param: type (1)    | param: type (2) | param: type (3) | comment                           |
+|----------|---------|--------------------|-----------------|-----------------|-----------------------------------|
+| `username` | content | `username: str`    ||||
+| `avatar_url` | content | `avatar_url: str`  ||||
+| `content` | content | `content: str`     ||||
+| `tts` | content | `tts: bool`        ||||
+| `embed_author` | content | `name: str`        | `url: str`      | `icon_url: str` ||
+| `embed_color` | content | `color: int`       |                 |                 | decimal, not hex `color` |
+| `embed_title` | content | `title: str`       ||||
+| `embed_url` | content | `url: str`         ||||
+| `embed_description` | content | `description: str` ||||
+| `embed_fields` | content | `name: str`        | `value: str`    | `inline: bool`  |
+| `embed_thumbnail` | content | `url: str`         ||||
+| `embed_image` | content | `url: str`         ||||
+| `embed_footer` | content | `text: str`        | `icon_url: str` |||
+| `embed_timestamp` | content | `timestamp: str` |                 |                 | ISO8601 `timestamp` |
+| `embed_fields_count` | utility |||||
+| `embeds_count` | utility |||||
+| `next_active_embed` | utility |||||
+| `change_active_embed` | utility | `embed: int` ||||
+| `post` | request | `webhook: str` ||||
+
+### Form
+
+For perspective, this is the raw form that is being populated through method calls.
 
 ```py
 {
