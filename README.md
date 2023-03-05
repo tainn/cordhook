@@ -42,27 +42,27 @@ form.post("webhook-url")
 
 A table featuring all available methods, their types, parameters and further info.
 
-| method   | type    | param: type (1)    | param: type (2) | param: type (3) | comment                           |
-|----------|---------|--------------------|-----------------|-----------------|-----------------------------------|
-| `username` | content | `username: str`    ||||
-| `avatar_url` | content | `avatar_url: str`  ||||
-| `content` | content | `content: str`     ||||
-| `tts` | content | `tts: bool`        ||||
-| `embed_author` | content | `name: str`        | `url: str`      | `icon_url: str` ||
-| `embed_color` | content | `color: int`       |                 |                 | decimal, not hex `color` |
-| `embed_title` | content | `title: str`       ||||
-| `embed_url` | content | `url: str`         ||||
-| `embed_description` | content | `description: str` ||||
-| `embed_fields` | content | `name: str`        | `value: str`    | `inline: bool`  |
-| `embed_thumbnail` | content | `url: str`         ||||
-| `embed_image` | content | `url: str`         ||||
-| `embed_footer` | content | `text: str`        | `icon_url: str` |||
-| `embed_timestamp` | content | `timestamp: str` |                 |                 | ISO8601 `timestamp` |
-| `embed_fields_count` | utility |||||
-| `embeds_count` | utility |||||
-| `next_active_embed` | utility |||||
-| `change_active_embed` | utility | `embed: int` ||||
-| `post` | request | `webhook: str` ||||
+| method   | type    | param: type                                | comment |
+|----------|---------|--------------------------------------------|---------|
+| `username` | content | `username: str`                            ||
+| `avatar_url` | content | `avatar_url: str`                          ||
+| `content` | content | `content: str`                             ||
+| `tts` | content | `tts: bool`                                ||
+| `embed_author` | content | `name: str` :: `url: str` :: `icon_url: str` ||
+| `embed_color` | content | `color: int`                               | decimal, not hex |
+| `embed_title` | content | `title: str`                               ||
+| `embed_url` | content | `url: str`                                 ||
+| `embed_description` | content | `description: str`                         ||
+| `embed_fields` | content | `name: str` :: `value: str` :: `inline: bool` ||
+| `embed_thumbnail` | content | `url: str`                                 ||
+| `embed_image` | content | `url: str`                                 ||
+| `embed_footer` | content | `text: str` :: `icon_url: str`             ||
+| `embed_timestamp` | content | `timestamp: str` | ISO8601 |
+| `embed_fields_count` | utility ||
+| `embeds_count` | utility ||
+| `next_active_embed` | utility ||
+| `change_active_embed` | utility | `embed: int`                               ||
+| `post` | request | `webhook: str`                             ||
 
 ### Form
 
