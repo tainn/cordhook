@@ -38,7 +38,7 @@ form.username("Kaonashi").embed_color(0000000).embed_description("...")
 form.post("webhook-url")
 ```
 
-### Methods
+### Reference
 
 A table featuring all available methods, their types, parameters and further info.
 
