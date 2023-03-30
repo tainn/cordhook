@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="discord-webhook",
-    version="2.1",
+    version="2.2",
     packages=["cordhook"],
     url="https://github.com/tainn/discord-webhook",
     license="MIT",
