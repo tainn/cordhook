@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+from collections.abc import Iterable
 
 import httpx
 
@@ -125,5 +126,9 @@ class Form:
     def change_active_embed(self, embed: int) -> None:
         self.active_embed: int = embed
 
-    def post(self, url: str = None) -> None:
-        httpx.post(url, json=self.form)
+    def post(self, url: str | Iterable[str] = None) -> None:
+        if isinstance(url, str):
+            httpx.post(url, json=self.form, timeout=10)
+        elif isinstance(url, Iterable):
+            for single in url:
+                httpx.post(single, json=self.form, timeout=10)
