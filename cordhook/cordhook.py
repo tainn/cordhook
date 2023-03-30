@@ -96,15 +96,22 @@ class Form:
         return self
 
     def embed_thumbnail(self, url: str = None) -> Form:
-        self.form["embeds"][self.active_embed]["thumbnail"] = {"url": url}
+        self.form["embeds"][self.active_embed]["thumbnail"] = {
+            "url": url,
+        }
         return self
 
     def embed_image(self, url: str = None) -> Form:
-        self.form["embeds"][self.active_embed]["image"] = {"url": url}
+        self.form["embeds"][self.active_embed]["image"] = {
+            "url": url,
+        }
         return self
 
     def embed_footer(self, text: str = None, icon_url: str = None) -> Form:
-        self.form["embeds"][self.active_embed]["footer"] = {"text": text, "icon_url": icon_url}
+        self.form["embeds"][self.active_embed]["footer"] = {
+            "text": text,
+            "icon_url": icon_url,
+        }
         return self
 
     def embed_timestamp(self, timestamp: str = None) -> Form:
@@ -129,6 +136,7 @@ class Form:
     def post(self, url: str | Iterable[str] = None) -> None:
         if isinstance(url, str):
             httpx.post(url, json=self.form, timeout=10)
+
         elif isinstance(url, Iterable):
             for single in url:
                 httpx.post(single, json=self.form, timeout=10)
