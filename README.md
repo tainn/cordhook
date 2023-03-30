@@ -1,6 +1,6 @@
 # discord-webhook
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Code style: black](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
 
 A package that allows for explicit manipulation of Discord webhook data.
 
@@ -23,7 +23,7 @@ allowing for easy method chaining.
 
 ### Example
 
-A minimal example setting the `username` and `embed_color` values and posting the webhook.
+A minimal example setting the `username`, `embed_color` and `embed_description` values and posting the webhook.
 
 ```py
 import cordhook
@@ -32,7 +32,7 @@ import cordhook
 form = cordhook.Form()
 
 # Apply changes in-place
-form.username("Kaonashi").embed_color(0000000)
+form.username("Kaonashi").embed_color(0000000).embed_description("...")
 
 # Ready to post
 form.post("webhook-url")

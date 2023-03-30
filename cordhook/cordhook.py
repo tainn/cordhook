@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import copy
 
-import requests
+import httpx
 
 EMBED_STRUCT: dict = {
     "author": {
@@ -126,4 +126,4 @@ class Form:
         self.active_embed: int = embed
 
     def post(self, url: str = None) -> None:
-        requests.post(url, json=self.form)
+        httpx.post(url, json=self.form)
