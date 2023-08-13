@@ -66,8 +66,6 @@ class Form:
         self.form = copy.deepcopy(FULL_STRUCT)
         self.active_embed = 0
 
-    # Form population methods
-
     def username(self, username: str | None = None) -> Form:
         self.form["username"] = username
         return self
@@ -140,8 +138,6 @@ class Form:
     def embed_timestamp(self, timestamp: str | None = None) -> Form:
         self.form["embeds"][self.active_embed]["timestamp"] = timestamp
         return self
-
-    # Utility methods
 
     def embed_fields_count(self) -> int:
         return len(self.form["embeds"][self.active_embed]["fields"])
