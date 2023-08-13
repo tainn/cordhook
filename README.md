@@ -14,7 +14,7 @@ respective fields.
 
 Fetch the latest version of the package:
 
-```sh
+```console
 python3 -m pip install --upgrade git+https://github.com/tainn/discord-webhook.git
 ```
 
