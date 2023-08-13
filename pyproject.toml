@@ -1,2 +1,17 @@
 [tool.black]
 line-length = 120
+
+[tool.ruff]
+line-length = 120
+src = ["cordhook"]
+select = ["I001"]
+
+[tool.ruff.isort]
+known-first-party = ["cordhook"]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "setuptools"
+ignore_missing_imports = true

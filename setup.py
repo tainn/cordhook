@@ -8,7 +8,5 @@ setup(
     license="MIT",
     author="tainn",
     description="Explicit Discord webhook data manipulation",
-    install_requires=[
-        "httpx==0.23.3"
-    ],
+    install_requires=["httpx==0.23.3"],
 )

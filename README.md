@@ -1,6 +1,8 @@
 # discord-webhook
 
-[![Code style: black](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
+[![black](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
+[![ruff](https://img.shields.io/badge/lint-ruff-d6ff69.svg)](https://github.com/astral-sh/ruff)
+[![mypy](https://img.shields.io/badge/type-mypy-efecbc.svg)](https://github.com/python/mypy)
 
 A package that allows for explicit manipulation of Discord webhook data.
 
