@@ -10,7 +10,7 @@ Instead of having to manually build a deserialized `json` object and at that be 
 are, `cordhook` allows for explicit and flat declaration of the payload data by calling of methods that populate their
 respective fields.
 
-### Install
+## Install
 
 Fetch the latest version of the package:
 
@@ -18,12 +18,12 @@ Fetch the latest version of the package:
 python3 -m pip install --upgrade git+https://github.com/tainn/discord-webhook.git
 ```
 
-### Usage
+## Usage
 
 All attributes are optional. Multiple embeds can be populated in a single payload. Each method returns a class instance,
 allowing for easy method chaining.
 
-#### Example
+### Example
 
 A minimal example setting the `username`, `embed_color`, `embed_description` values and posting the webhook.
 
@@ -36,7 +36,7 @@ form.username("Kaonashi").embed_color(0000000).embed_description("...")
 form.post("webhook-url")
 ```
 
-#### Form
+### Form
 
 For perspective, this is the raw form that is being populated through method calls.
 
