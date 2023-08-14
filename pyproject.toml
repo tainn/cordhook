@@ -4,7 +4,7 @@ line-length = 120
 [tool.ruff]
 line-length = 120
 src = ["cordhook"]
-select = ["I001"]
+select = ["I001", "F401"]
 
 [tool.ruff.isort]
 known-first-party = ["cordhook"]
@@ -13,5 +13,5 @@ known-first-party = ["cordhook"]
 strict = true
 
 [[tool.mypy.overrides]]
-module = "setuptools"
+module = ["setuptools"]
 ignore_missing_imports = true
