@@ -15,7 +15,7 @@ respective fields.
 Fetch the latest version of the package:
 
 ```console
-python3 -m pip install --upgrade git+https://github.com/tainn/discord-webhook.git@v2.5
+python3 -m pip install --upgrade git+https://github.com/tainn/discord-webhook.git@v2.6
 ```
 
 ## Usage
