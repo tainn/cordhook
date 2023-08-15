@@ -1,3 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.1.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "discord-webhook"
+version = "2.5"
+description = "Explicit Discord webhook data manipulation"
+readme = "README.md"
+authors = [{ name = "tainn" }]
+keywords = ["discord", "webhook"]
+dependencies = ["httpx>=0.24.1"]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "mypy"]
+
+[project.urls]
+Homepage = "https://github.com/tainn/discord-webhook"
+
 [tool.black]
 line-length = 120
 
