@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "discord-webhook"
-version = "2.7"
+version = "0.2.8"
 description = "Explicit Discord webhook data manipulation"
 readme = "README.md"
 authors = [{ name = "tainn" }]
