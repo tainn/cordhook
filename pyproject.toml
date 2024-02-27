@@ -3,7 +3,7 @@ requires = ["setuptools>=68.1.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "discord-webhook"
+name = "cordhook"
 version = "0.2.8"
 description = "Explicit Discord webhook data manipulation"
 readme = "README.md"
@@ -16,7 +16,7 @@ requires-python = ">=3.11"
 dev = ["ruff", "mypy"]
 
 [project.urls]
-homepage = "https://github.com/tainn/discord-webhook"
+homepage = "https://github.com/tainn/cordhook"
 
 [tool.ruff]
 fix = true

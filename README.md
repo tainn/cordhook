@@ -1,4 +1,4 @@
-# discord-webhook
+# cordhook
 
 [![ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![mypy](https://img.shields.io/badge/type-mypy-222a3d.svg)](https://github.com/python/mypy)
@@ -14,7 +14,7 @@ respective fields.
 Fetch the latest version of the package:
 
 ```console
-python3 -m pip install git+https://github.com/tainn/discord-webhook.git@0.2.8
+python3 -m pip install git+https://github.com/tainn/cordhook.git@0.2.8
 ```
 
 ## Usage
