@@ -1,16 +1,14 @@
 [build-system]
-requires = ["setuptools>=68.1.0", "wheel"]
+requires = ["setuptools>=69.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "cordhook"
 version = "0.2.8"
-description = "Explicit Discord webhook data manipulation"
-readme = "README.md"
-authors = [{ name = "tainn" }]
-keywords = ["package", "webhook", "discord"]
-dependencies = ["httpx==0.24.1"]
-requires-python = ">=3.11"
+readme = "readme.md"
+dependencies = [
+    "httpx==0.24.1"
+]
 
 [project.optional-dependencies]
 dev = ["ruff", "mypy"]
@@ -23,6 +21,8 @@ fix = true
 indent-width = 4
 line-length = 120
 src = ["cordhook"]
+
+[tool.ruff.lint]
 select = [
     "I001",
     "F401"
@@ -39,7 +39,11 @@ skip-magic-trailing-comma = false
 
 [tool.mypy]
 strict = true
-exclude = ["build"]
+disable_error_code = [
+    "no-any-return",
+    "func-returns-value"
+]
+exclude = ["venv", "build"]
 
 [[tool.mypy.overrides]]
 module = ["setuptools"]
