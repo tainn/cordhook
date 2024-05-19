@@ -11,7 +11,7 @@ respective fields
 fetch the latest version of the package:
 
 ```console
-python3 -m pip install git+https://github.com/tainn/cordhook.git@0.2.8
+python3 -m pip install git+https://github.com/tainn/cordhook.git@0.2.9
 ```
 
 ## usage
