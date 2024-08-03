@@ -1,27 +1,27 @@
 # cordhook
 
-a package that allows for explicit manipulation of discord webhook data
+A package that allows for explicit manipulation of Discord webhook data.
 
-instead of having to manually build a deserialized `json` object and at that be careful of where certain keys
+Instead of having to manually build a deserialized `json` object and at that be careful of where certain keys
 are, `cordhook` allows for explicit and flat declaration of the payload data by calling of methods that populate their
-respective fields
+respective fields.
 
-## install
+## Install
 
-fetch the latest version of the package:
+Fetch the latest version of the package:
 
 ```console
 python3 -m pip install git+https://github.com/tainn/cordhook.git@0.2.9
 ```
 
-## usage
+## Usage
 
-all attributes are optional. multiple embeds can be populated in a single payload. each method returns a class instance,
-allowing for easy method chaining
+All attributes are optional. Multiple embeds can be populated in a single payload. Each method returns a class instance,
+allowing for easy method chaining.
 
-### example
+### Example
 
-a minimal example setting the `username`, `embed_color`, `embed_description` values and posting the webhook:
+A minimal example setting the `username`, `embed_color`, `embed_description` values and posting the webhook:
 
 ```py
 import cordhook
@@ -32,9 +32,9 @@ form.username("Kaonashi").embed_color(0000000).embed_description("...")
 form.post("webhook-url")
 ```
 
-### form
+### Form
 
-for perspective, this is the raw form that is being populated through method calls:
+For perspective, this is the raw form that is being populated through method calls:
 
 ```py
 {
