@@ -107,13 +107,11 @@ class Form:
         return self
 
     def embed_fields(self, name: str | None = None, value: str | None = None, inline: bool | None = None) -> Form:
-        self.form["embeds"][self.active_embed]["fields"].append(
-            {
-                "name": name,
-                "value": value,
-                "inline": inline,
-            }
-        )
+        self.form["embeds"][self.active_embed]["fields"].append({
+            "name": name,
+            "value": value,
+            "inline": inline,
+        })
         return self
 
     def embed_thumbnail(self, url: str | None = None) -> Form:
